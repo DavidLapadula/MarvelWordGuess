@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Marvel Word Trivia</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Marvel" rel="stylesheet"> <!-- Google font used to achieve actual Marvel font style -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> <!-- Bootstrap to remain responsive-->
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>  <!-- External style sheet for minor styling adjustments-->
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">     <!-- Favicon-->
+        <script src="assets/javascript/game.js"></script> <!--Link to external javascript file -->     
+    </head>  
+    <body>   
+        <div class="container p-0">   
+            <div class="row">   
+                <div class="col-12"> 
+                    <h1 id="marvel-header" class="font-weight-bold text-center p-0"> Marvel Trivia </h1> 
+                </div>
+                <div class="col-md-7 pr-0 mt-3">
+                    <img class="img-fluid w-100 h-50" src="assets/images/marvelBackgroundLeft.jpg">    
+                </div> 
+                <div class="col-md-5 pl-0 mt-3">
+                    <img class="img-fluid w-100 h-50" src="assets/images/marvelBackgroundRight.jpg">    
+                </div>
+            </div>   
+            <div class="container" id="main-content">
+                <div class="col-12 red-border p-5"> 
+                    <div class="row mb-4">
+                        <div class="col-md-6 text-light white-border">
+                            <p class="m-3 h4">
+                                Want to test your Marvel lexicon?
+                                <br>
+                                Press any key to play the computer!
+                                <br>  <br> 
+                                Free hint: each word is related to a character above...
+                                <br>  <br> 
+                                There are 9, so first to 5 wins!
+                            </p>
+                        </div>
+                        <div class="col-md-6 white-border"> 
+                            <div class="row border-bottom p-1"> 
+                                <div class="col-12 text-center mt-2">
+                                    <h3 class="text-light">Current Word</h3> 
+                                </div>
+                                <div class="col-12">
+                                    <p class="text-light" id="current-word"> </p>
+                                </div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="col-4 mt-2 pr-0">
+                                    <h4 class="text-light">Letters Guessed:</h4> 
+                                </div> 
+                                <div class="col-8">
+                                    <p class="text-light" id="current-word"> </p>
+                                </div>
+                            </div>
+                            <br> 
+                            <div class="row p-3">
+                                <div class="col-10">
+                                    <h1 class="text-light">Guesses Remaining</h1> 
+                                </div> 
+                                <div class="col-2 border p-0">
+                                    <p class="text-white h5 text-center w-100 p-0" id="wins"> ? </p>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>  
+                    <div class="row">
+                        <div class="col-md-6 white-border ">  
+                            <p class="text-light h4 mt-3">
+                                Would You like a hint ?
+                            </p>
+                            <br> 
+                                <button type="button" class="btn btn-outline-light">HINT</button>
+                            <br> <br>
+                            <textarea class="border w-100 bg-dark text-light mb-3" id="hint">
+
+                            </textarea>
+                        </div>
+                        <div class="col-md-6 white-border "> 
+                            <div class="row m-4">
+                                <div class="col-10 text-center">
+                                    <h1 class="text-light">Wins</h1> 
+                                </div> 
+                                <div class="col-2 border p-0">
+                                       <p class="text-white display-4 text-center w-100 p-0" id="wins"> 0 </p>
+                                </div>
+                            </div>
+                            <div class="row m-4">
+                                <div class="col-10 text-center">
+                                        <h1 class="text-light">Losses</h1> 
+                                </div>
+                                <div class="col-2 border p-0">
+                                     <p class="text-white display-4 text-center w-100 p-0" id="losses"> 0 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div> 
+            <div id="">
+                <img src="">
+                <h1 id="" class=""> </h1>
+            </div>>
+        </div>       
+    </body> 
+</html>

@@ -1,0 +1,20 @@
+body {
+    background-color: black; 
+}  
+
+#marvel-header { 
+    font-family: 'Marvel', sans-serif; 
+    color: white; 
+    background-color: red; 
+    font-size: 7em;  
+} 
+
+.red-border {
+    border-color: red; 
+    border-style: groove;
+    border-width: 0.7em;   
+}
+ 
+.white-border {
+    border: 0.3em dashed white; 
+} 
