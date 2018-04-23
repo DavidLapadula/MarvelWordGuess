@@ -1,5 +1,6 @@
 body {
     background-color: black; 
+    margin-bottom: 10em; 
 }  
 
 #marvel-header { 
@@ -8,7 +9,7 @@ body {
     background-color: red; 
     font-size: 7em;  
 } 
-
+ 
 .red-border {
     border-color: red; 
     border-style: groove;

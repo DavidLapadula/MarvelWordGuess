@@ -17,92 +17,101 @@
                 <div class="col-12"> 
                     <h1 id="marvel-header" class="font-weight-bold text-center p-0"> Marvel Trivia </h1> 
                 </div>
-                <div class="col-md-7 pr-0 mt-3">
-                    <img class="img-fluid w-100 h-50" src="assets/images/marvelBackgroundLeft.jpg">    
+                <div class="col-md-12 pr-0 mt-3 text-center">
+                    <img class="img-fluid" src="assets/images/marvelBackground.png">     
+                </div>  
+            </div> 
+            <div class="row p-3">
+                <div class="col-md-4 col-sm-12 text-center">
+                    <img class="img-fluid" src="assets/images/placeholder.jpg"> 
                 </div> 
-                <div class="col-md-5 pl-0 mt-3">
-                    <img class="img-fluid w-100 h-50" src="assets/images/marvelBackgroundRight.jpg">    
+                <div class="col-md-4">
+                    <p class="text-light display-4 text-center mt-5" id="Result"> </p>
                 </div>
-            </div>   
+                <div class="col-md-4">
+                    <p class="text-light display-4 text-center mt-5" id="word-bubble"> </p> 
+                </div>
+            </div>    
             <div class="container" id="main-content">
-                <div class="col-12 red-border p-5"> 
+                <div class="col-12 red-border p-5">   
                     <div class="row mb-4">
                         <div class="col-md-6 text-light white-border">
-                            <p class="m-3 h4">
+                            <p class="m-3 h6">
                                 Want to test your Marvel lexicon?
                                 <br>
-                                Press any key to play the computer!
+                      -          Press any key to play the computer!
                                 <br>  <br> 
                                 Free hint: each word is related to a character above...
                                 <br>  <br> 
                                 There are 9, so first to 5 wins!
                             </p>
-                        </div>
+                        </div>  
                         <div class="col-md-6 white-border"> 
                             <div class="row border-bottom p-1"> 
                                 <div class="col-12 text-center mt-2">
-                                    <h3 class="text-light">Current Word</h3> 
+                                    <h6 class="text-light">Current Word</h6> 
                                 </div>
                                 <div class="col-12">
                                     <p class="text-light" id="current-word"> </p>
                                 </div>
+                                <br> 
                             </div>
                             <div class="row border-bottom">
-                                <div class="col-4 mt-2 pr-0">
-                                    <h4 class="text-light">Letters Guessed:</h4> 
+                                <br> <br>  
+                                <div class="col-2 mt-2 pr-0">
+                                    <h6 class="text-light">Guesses:</h6> 
                                 </div> 
-                                <div class="col-8">
+                                <div class="col-10">
                                     <p class="text-light" id="current-word"> </p>
                                 </div>
+                                <br> <br>   
                             </div>
                             <br> 
-                            <div class="row p-3">
-                                <div class="col-10">
-                                    <h1 class="text-light">Guesses Remaining</h1> 
+                            <div class="row pr-1 pl-1 pb-2">
+                                <div class="col-9 pl-1">
+                                    <h5 class="text-light">Guesses Remaining</h5> 
                                 </div> 
-                                <div class="col-2 border p-0">
-                                    <p class="text-white h5 text-center w-100 p-0" id="wins"> ? </p>
+                                <div class="col-3 border">
+                                    <p class="text-white h5 text-center w-100 pr-5" id="guesses-remaining">  </p>
                                 </div>
                             </div>
                         </div>     
-                    </div>  
+                    </div>    
                     <div class="row">
                         <div class="col-md-6 white-border ">  
-                            <p class="text-light h4 mt-3">
-                                Would You like a hint ?
+                            <p class="text-light h6 mt-3">
+                                Would You like a hint ?  
                             </p>
                             <br> 
-                                <button type="button" class="btn btn-outline-light">HINT</button>
+                                <button type="button" class="btn btn-sm btn-outline-light">HINT</button>
                             <br> <br>
                             <textarea class="border w-100 bg-dark text-light mb-3" id="hint">
 
                             </textarea>
                         </div>
                         <div class="col-md-6 white-border "> 
+                            <br>
                             <div class="row m-4">
                                 <div class="col-10 text-center">
-                                    <h1 class="text-light">Wins</h1> 
+                                    <h4 class="text-light">Wins</h4> 
                                 </div> 
                                 <div class="col-2 border p-0">
-                                       <p class="text-white display-4 text-center w-100 p-0" id="wins"> 0 </p>
+                                       <p class="text-white h4 text-center w-100 p-0" id="wins"> 0 </p>
                                 </div>
                             </div>
                             <div class="row m-4">
                                 <div class="col-10 text-center">
-                                        <h1 class="text-light">Losses</h1> 
+                                        <h4 class="text-light">Losses</h4> 
                                 </div>
                                 <div class="col-2 border p-0">
-                                     <p class="text-white display-4 text-center w-100 p-0" id="losses"> 0 </p>
+                                     <p class="text-white h4 text-center w-100 p-0" id="losses"> 0 </p>
                                 </div>
                             </div>
                         </div>
+                        <button type="button" class="col-md-6 btn btn-secondary btn-lg mt-2 offset-md-3" id="play-again">Play Again?</button>
                     </div> 
                 </div>
             </div> 
-            <div id="">
-                <img src="">
-                <h1 id="" class=""> </h1>
-            </div>>
         </div>       
     </body> 
 </html>
