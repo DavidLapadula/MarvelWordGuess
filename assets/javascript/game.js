@@ -4,11 +4,12 @@ var lossCounter = document.getElementById("losses");
 var guessesRemaining = document.getElementById("guesses-remaining"); 
 var hint = document.getElementById("hint");   
 var trackerImage = document.getElementById("tracker-image"); 
+var currentWord = document.getElementById("word-at-play"); 
 var letterArray = [""]; 
 var usedArray = [""];    
     document.onkeyup = function (event) {
         
-        if (event.keyCode === 13) {  
+        if (event.keyCode === 13) {   
             
             var words = [ //array with objects that hold words, guesses, and hints
 
@@ -26,42 +27,38 @@ var usedArray = [""];
 
             winsCounter.innerHTML = '0';  
             lossCounter.innerHTML = '0';
-
+  
        
             randomObject = words[Math.floor(Math.random() * words.length)];  
             randomWord = randomObject.word;
             randomhero = randomObject.hero; 
             randomHint = randomObject.hint;    
                     
-                    
+                       
             
             for (var i = 0; i < randomWord.length; i++) {
-                letterArray[i] = ' ____ ';    
+                letterArray[i] = ' __ ';    
             }     
             
-            currentWordString = letterArray.join(""); 
-            document.getElementById("word-at-play").innerHTML = currentWordString;
+            currentWordString = letterArray.join(" ");  
+            currentWord.innerHTML = currentWordString; 
             document.getElementById("guesses-remaining").innerHTML = randomWord.length * 2;    
                  
             document.onkeyup = function (event) {
-                console.log(randomWord);  
-                var letterGuessed = event.key;  
-                function getIndex (letterGuessed) {  //doesnt work  
-                    return letterGuessed; 
-                }
-                if (randomWord.includes(letterGuessed)) {
-                    var correctWordArray = randomWord.split(''); 
-                    console.log(correctWordArray);
-                    var indexOfGuess = correctWordArray.findIndex(getIndex); 
-                    console.log(indexOfGuess);     
-                }
-            } 
+                var letterGuessed = event.key;   
+                console.log(randomWord); 
+                console.log(letterGuessed); 
+                var correctWordArray = randomWord.split(''); 
+                    for (var i = 0; i < randomWord.length; i++) {
+                        if (correctWordArray[i] === letterGuessed) {  
+                            letterArray[i] = letterGuessed;  
+                            currentGuess = letterArray.join(""); 
+                            currentWord.innerHTML = currentGuess;  
+                        }   
+                    }
+            }    
         }    
     }    
-
-        
-
- 
 
 
    
