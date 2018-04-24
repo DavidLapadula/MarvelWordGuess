@@ -18,4 +18,8 @@ body {
  
 .white-border {
     border: 0.25em dashed white; 
-} 
+}  
+
+#play-again {
+    display: none; 
+}
