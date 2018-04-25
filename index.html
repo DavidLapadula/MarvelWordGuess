@@ -5,13 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Marvel Word Trivia</title> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Marvel" rel="stylesheet"> <!-- Google font used to achieve actual Marvel font style -->
+        <link href="https://fonts.googleapis.com/css?family=Marvel" rel="stylesheet"> <!-- Google font used to achieve actual Marvel font style -->  
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> <!-- Bootstrap to remain responsive-->
         <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>  <!-- External style sheet for minor styling adjustments-->
         <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">     <!-- Favicon-->
-    </head>  
+    </head>    
     <body>   
-        <div class="container p-0">   
+        <div class="container p-0">      
             <div class="row">   
                 <div class="col-12"> 
                     <h1 id="marvel-header" class="font-weight-bold text-center p-0"> Marvel Trivia </h1> 
@@ -25,14 +25,14 @@
                     <img class="img-fluid" id="tracker-image" src="assets/images/placeholder.jpg"> 
                 </div> 
                 <div class="col-md-4">
-                    <p class="text-light display-4 text-center mt-5" id="Result"> </p>
+                    <p class="text-light display-4 text-center mt-5" id="result"> </p>
                 </div>
                 <div class="col-md-4">
                     <p class="text-light display-4 text-center mt-5" id="word-bubble"> </p> 
-                </div>
-            </div>     
+                </div>  
+            </div>      
             <div class="container" id="main-content">
-                <div class="col-12 red-border p-4">   
+                <div class="col-12 red-border p-4">     
                     <div class="row mb-4"> 
                         <div class="col-sm-6 text-light white-border">
                             <p class="m-3 h6"> 
@@ -66,7 +66,7 @@
                                     <p class="text-light" id="used-letters"> </p> 
                                 </div> 
                                 <br> <br>          
-                            </div> 
+                            </div>  
                             <br>     
                             <div class="row pr-1 pl-1 pb-2">  
                                 <div class="col-9 pl-1">  
@@ -76,7 +76,7 @@
                                     <p class="text-white h5 text-center w-100 pr-5" id="guesses-remaining">  </p>
                                 </div>
                             </div> 
-                        </div>          
+                        </div>           
                     </div>       
                     <div class="row">
                         <div class="col-sm-6 white-border ">     
@@ -117,13 +117,3 @@
         <script src="assets/javascript/game.js"></script> <!--Link to external javascript file -->           
     </body> 
 </html>
-
-<!-- https://css-tricks.com/snippets/javascript/javascript-array-contains/ -->
-<!-- https://www.youtube.com/watch?v=tbLCMFp9QK4&t=223s -->
-<!-- console.log(randomWord);  -->
-<!-- var search = randomWord.match(letterGuessed);  -->
-<!-- console.log(search);  -->
-<!-- var x = randomWord.toLowerCase().split("").sort().join("").match(/(.)\1+/g); -->
-<!-- var letterGuessIndex = correctWordArray.indexOf(letterGuessed);    -->
-                    <!-- console.log(letterGuessIndex);    -->
-<!-- Boolean variable set to true fo enter -->
