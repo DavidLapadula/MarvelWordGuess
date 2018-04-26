@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-md-12 pr-0 mt-3 text-center">
                     <img class="img-fluid" id="background-image" src="assets/images/marvelBackground.png">     
-                </div>  
+                </div>    
             </div>           
             <div class="container" id="main-content"> 
                 <div class="col-12 red-border p-4">     
@@ -30,22 +30,22 @@
                                 </div>  
                                 <div class="col-md-12">
                                     <p class="text-light h4 text-center mt-5" id="result"></p>
-                                </div>
+                                </div> 
                                 <div class="col-md-12"> 
                                     <p class="text-light h4 text-center mt-5" id="word-bubble"></p> 
-                                </div>
+                                </div>  
                             </div>   
-                            <p id="starting-text" class="m-3 h6">  
+                            <p id="starting-text" class="m-3 h6">   
                                 Want to test your Marvel lexicon? 
                                 <br>  <br> 
                                 The amount of guesses  is double the length of the word. 
                                 <br>  <br> 
                                 Free hint: each word is related to a character above...
                                 <br>  <br> 
-                                There are 9, so first to 5 wins!
+                                There are 9, so first to 5 wins!   
                                 <br> <br> 
                                 Press 'Enter' to get started, and then type your guesses! 
-                            </p> 
+                            </p>   
                         </div>        
                         <div class="col-sm-6 white-border">  
                             <div class="row border-bottom p-1"> 
@@ -55,7 +55,7 @@
                                 <br>
                                 <div class="col-12 text-center">
                                     <p class="text-light h-100 mb-0 h5" id="word-at-play"> </p> 
-                                </div> 
+                                </div>  
                                 <br>  
                             </div> 
                             <div class="row border-bottom">
@@ -65,7 +65,7 @@
                                 </div>     
                                 <div class="col-md-10 col-sm-9 pl-2"> 
                                     <p class="text-light mb-0 mt-2" id="used-letters"> </p> 
-                                </div> 
+                                </div>    
                                 <br> <br>          
                             </div>  
                             <br>     
@@ -79,42 +79,41 @@
                             </div>  
                         </div>           
                     </div>        
- 
+   
                     <div class="row">
                         <div class="col-sm-6 white-border ">     
                             <p class="text-light h6 mt-3">
                                 Would You like a hint ?  It will cost you a guess... 
-                            </p> 
-                            <br>   
-                                <button type="button" class="btn btn-sm btn-outline-light">HINT</button>
-                            <br> <br>
-                            <p class="border w-100 bg-dark text-light mb-3" id="hint">
                             </p>  
+                            <br>   
+                                <button type="button" class="btn btn-sm btn-outline-light" onclick="hintGenerator()">HINT</button>
+                            <br> <br>
+                            <p class="w-100 bg-dark text-light mb-3 h3 readonly text-center" id="hint">?</p>       
                         </div>
-                        <div class="col-sm-6 white-border "> 
-                            <br>       
+                        <div class="col-sm-6 white-border ">  
+                            <br>          
                             <div class="row m-4"> 
-                                <div class="col-10 text-center"> 
-                                    <h4 class="text-light">Wins</h4> 
+                                <div class="col-10 text-center">  
+                                    <h4 class="text-light"> Wins</h4>  
                                 </div> 
                                 <div class="col-2 border p-0">
                                        <p class="text-white h4 text-center w-100 p-0" id="wins"> </p>
                                 </div>
-                            </div>
+                            </div> 
                             <div class="row m-4"> 
                                 <div class="col-10 text-center">
                                         <h4 class="text-light">Losses</h4> 
                                 </div> 
                                 <div class="col-2 border p-0">
-                                     <p class="text-white h4 text-center w-100 p-0" id="losses">  </p>
+                                     <p class="text-white h4 text-center w-100 p-0" id="losses">  </p> 
                                 </div>
-                            </div>
+                            </div> 
                         </div>   
                         <input type="button" value="Play again?" onClick="window.location.href=window.location.href"  class="col-md-6 btn btn-secondary btn-lg mt-2 offset-md-3 text-light">   
                     </div> 
                 </div>
-            </div> 
+            </div>  
         </div>      
-        <script src="assets/javascript/game.js"></script> <!--Link to external javascript file -->           
+        <script src="assets/javascript/game.js"></script> <!--Link to external javascript file -->      
     </body> 
 </html>

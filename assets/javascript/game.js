@@ -10,9 +10,21 @@ var result = document.getElementById("result");
 var wordbubble = document.getElementById("word-bubble"); 
 var gameInterface = document.getElementById("game-interface"); 
 var startingText = document.getElementById("starting-text");
-var letterArray = [""];   
-var usedArray = [""];     
+var letterArray = [];   
+var usedArray = []; 
+var randomWordsUsed = [];   
 
+function hintGenerator () {
+    if (hint.innerHTML === "?") { 
+        hint.innerHTML = randomHint; 
+        guessesRemaining.innerHTML--; 
+    } else if (guessesRemaining.innerHTML >= 1) { 
+        hint.innerHTML = "You only get one!"    
+    } else if (guessesRemaining.innerHTML === '') {
+        hint.innerHTML = "You need to be playing!"    
+    }
+}       
+   
     document.onkeyup = function (event) {
         
         if (event.keyCode === 13) {    
@@ -35,7 +47,8 @@ var usedArray = [""];
             lossCounter.innerHTML = '0';
 
             function wordGenerator () { //function that generates a random word and fills the 'current word' bix with underlines
-      
+
+               if (winsCounter.innerHTML <= 4 && lossCounter.innerHTML <= 4) { //only generates a new word if the game has not been won by the user or the computer
                 randomObject = words[Math.floor(Math.random() * words.length)];    
                 randomWord = randomObject.word;
                 randomMessage = randomObject.message; 
@@ -55,66 +68,82 @@ var usedArray = [""];
                 usedArray.length = 0;  
                 usedLetters.innerHTML = ""; 
 
-            } 
-              
+               } 
+                else {
+                    return; 
+                }
+     
+            }    
+ 
+            wordGenerator ();     
 
-            wordGenerator ();   
+            document.onkeyup = function (event) { 
+                    if (event.keyCode >= 65 && event.keyCode <= 90) { 
+                        hint.innerHTML = '?';    
+                        wordbubble.innerHTML = "";  
+                        gameInterface.id = "";   
+                        startingText.id = "game-text";      
+                        var letterGuessed = event.key.toLowerCase();  
+                        var correctWordArray = randomWord.split(''); 
+                        if (correctWordArray.includes(letterGuessed)) {
+                            wordbubble.innerHTML = "Nice!"
+                            trackerImage.src = "assets/images/placeholder.jpg";
+                            result.innerHTML = "";     
+                        } else if (usedArray.includes(letterGuessed)) {
+                            wordbubble.innerHTML = "You Tried that Already!"; 
+                        } 
+                        else {   
+                            usedArray.push(letterGuessed); 
+                            wordbubble.innerHTML = "Wrong!";  
+                            guessesRemaining.innerHTML--;  
+                            wrongLetters = usedArray.join(" , "); 
+                            usedLetters.innerHTML = wrongLetters;   
+                        } 
+                            for (var i = 0; i < randomWord.length; i++) {
+                                if (correctWordArray[i] === letterGuessed) {  
+                                    letterArray[i] = letterGuessed;  
+                                    currentGuess = letterArray.join(""); 
+                                    currentWord.innerHTML = currentGuess;  
+                                }      
+                        }      
+                         
+                        trackerImage.src = "assets/images/placeholder.jpg";
+                        result.innerHTML = "";  
+   
+                    }  
 
-                document.onkeyup = function (event) { 
-                wordbubble.innerHTML = "";  
-                gameInterface.id = ""; 
-                startingText.id = "game-text";      
-                var letterGuessed = event.key; 
-                var correctWordArray = randomWord.split(''); 
-                if (correctWordArray.includes(letterGuessed)) {
-                    wordbubble.innerHTML = "Nice!"
-                    trackerImage.src = "assets/images/placeholder.jpg";
-                    result.innerHTML = "";  
-                } else if (usedArray.includes(letterGuessed)) {
-                    wordbubble.innerHTML = "You Tried that Already!"; 
-                } 
-                else {  
-                    usedArray.push(letterGuessed); 
-                    wordbubble.innerHTML = "Wrong!";  
-                    guessesRemaining.innerHTML--;  
-                    wrongLetters = usedArray.join(" , "); 
-                    usedLetters.innerHTML = wrongLetters;   
-                } 
-                    for (var i = 0; i < randomWord.length; i++) {
-                        if (correctWordArray[i] === letterGuessed) {  
-                            letterArray[i] = letterGuessed;  
-                            currentGuess = letterArray.join(""); 
-                            currentWord.innerHTML = currentGuess;  
-                        }     
+                    if (guessesRemaining.innerHTML < 1) {
+                        lossCounter.innerHTML++;
+                        hint.innerHTML = '?';   
+                        wordbubble.innerHTML = "Point for me" 
+                        wordGenerator();  
+                    } else if (randomWord === currentWord.innerHTML) {
+                        trackerImage.src = randomImage;  
+                        hint.innerHTML = '?'; 
+                        result.innerHTML = "It's " + randomMessage + " !"; 
+                        winsCounter.innerHTML++;  
+                        wordbubble.innerHTML = "Point for You!" 
+                        wordGenerator();   
+                    }   
+                    if (winsCounter.innerHTML >= 5) {
+                        trackerImage.src = "assets/images/marvel-win.jpg";
+                        result.innerHTML = "It was " + randomMessage + " !";  
+                        hint.innerHTML = '';      
+                        wordbubble.innerHTML = "That's 5! You win! Marvel wiz!";
+                        currentWord.innerHTML = ''; 
+                        guessesRemaining.innerHTML = '';    
+
+                    } else if (lossCounter.innerHTML >= 5) { 
+                        trackerImage.src = "assets/images/you-lose.jpg";
+                        result.innerHTML = "Nice Try!"; 
+                        hint.innerHTML = '';   
+                        wordbubble.innerHTML = "Press Play again for a do-over"; 
+                        currentWord.innerHTML = ''; 
+                        guessesRemaining.innerHTML = '';  
+                    }    
+  
                 }    
-                
-                trackerImage.src = "assets/images/placeholder.jpg";
-                result.innerHTML = "";  
-                
-                if (guessesRemaining.innerHTML < 1) {
-                    wordGenerator();  
-                    console.log(currentWord.innerHTML); 
-                    lossCounter.innerHTML++;
-                    wordbubble.innerHTML = "Point for me"
-                } else if (randomWord === currentWord.innerHTML) {
-                    trackerImage.src = randomImage; 
-                    result.innerHTML = "It's " + randomMessage + " !"; 
-                    wordGenerator();   
-                    winsCounter.innerHTML++;  
-                    wordbubble.innerHTML = "Point for You!" 
-
-                }  
-                if (winsCounter.innerHTML >= 5) {
-                    trackerImage.src = "assets/images/marvel-win.jpg";
-                    result.innerHTML = " You Win!";  
-                    wordbubble.innerHTML = "You're a Marvel wiz"; 
-
-                } else if (lossCounter.innerHTML >= 5) {
-                    trackerImage.src = "assets/images/you-lose.jpg";
-                    result.innerHTML = " You lose!";  
-                    wordbubble.innerHTML = "Press Play again for a do-over"; 
-                } 
             }     
-        }    
-    }         
+        }      
+             
 
