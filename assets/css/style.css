@@ -9,10 +9,10 @@ body {
     background-color: red; 
     font-size: 7em;  
 }     
- 
+  
 .red-border {
     border-color: red; 
-    border-style: groove;
+    border-style: groove; 
     border-width: 0.7em;   
 }
  
@@ -20,6 +20,18 @@ body {
     border: 0.25em dashed white; 
 }  
 
-#play-again {
-    display: none; 
+#background-image {
+    height: 10em; 
 }
+ 
+.game-image {
+    width: 8em;  
+}
+
+#game-interface {
+    display: none; 
+}  
+
+#game-text {
+    display: none; 
+} 

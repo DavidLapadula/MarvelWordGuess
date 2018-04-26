@@ -17,82 +17,83 @@
                     <h1 id="marvel-header" class="font-weight-bold text-center p-0"> Marvel Trivia </h1> 
                 </div>
                 <div class="col-md-12 pr-0 mt-3 text-center">
-                    <img class="img-fluid" src="assets/images/marvelBackground.png">     
+                    <img class="img-fluid" id="background-image" src="assets/images/marvelBackground.png">     
                 </div>  
-            </div>   
-            <div class="row p-3">
-                <div class="col-md-4 col-sm-12 text-center">
-                    <img class="img-fluid" id="tracker-image" src="assets/images/placeholder.jpg"> 
-                </div> 
-                <div class="col-md-4">
-                    <p class="text-light display-4 text-center mt-5" id="result"> </p>
-                </div>
-                <div class="col-md-4">
-                    <p class="text-light display-4 text-center mt-5" id="word-bubble"> </p> 
-                </div>  
-            </div>      
-            <div class="container" id="main-content">
+            </div>           
+            <div class="container" id="main-content"> 
                 <div class="col-12 red-border p-4">     
-                    <div class="row mb-4"> 
-                        <div class="col-sm-6 text-light white-border">
-                            <p class="m-3 h6"> 
+                    <div class="row mb-4">  
+                        <div i class="col-sm-6 text-light white-border">
+                            <div id="game-interface">
+                                <div  class="col-md-12 col-sm-12 text-center pt-1">
+                                    <img class="img-fluid game-image" id="tracker-image" src="assets/images/placeholder.jpg"> 
+                                </div>  
+                                <div class="col-md-12">
+                                    <p class="text-light h4 text-center mt-5" id="result"></p>
+                                </div>
+                                <div class="col-md-12"> 
+                                    <p class="text-light h4 text-center mt-5" id="word-bubble"></p> 
+                                </div>
+                            </div>   
+                            <p id="starting-text" class="m-3 h6">  
                                 Want to test your Marvel lexicon? 
                                 <br>  <br> 
-                                The amount of guesses  is double the length of the word.
+                                The amount of guesses  is double the length of the word. 
                                 <br>  <br> 
                                 Free hint: each word is related to a character above...
                                 <br>  <br> 
                                 There are 9, so first to 5 wins!
                                 <br> <br> 
-                                Press 'Enter' to get started, and then type your guesses!
+                                Press 'Enter' to get started, and then type your guesses! 
                             </p> 
-                        </div>    
-                        <div class="col-sm-6 white-border"> 
+                        </div>        
+                        <div class="col-sm-6 white-border">  
                             <div class="row border-bottom p-1"> 
                                 <div class="col-12 text-center mt-2">
-                                    <h5 class="text-light">Current Word</h5>   
-                                </div>
+                                    <h5 class="text-light">Current Word</h5>    
+                                </div> 
+                                <br>
                                 <div class="col-12 text-center">
-                                    <p class="text-light h-100 mb-0" id="word-at-play"> </p> 
-                                </div>
-                                <br> 
+                                    <p class="text-light h-100 mb-0 h5" id="word-at-play"> </p> 
+                                </div> 
+                                <br>  
                             </div> 
                             <div class="row border-bottom">
                                 <br> <br>   
-                                <div class="col-3 mt-2 pr-0">
-                                    <h5 class="text-light">Used:</h5>  
+                                <div class="col-md-2 col-sm-3 mt-2 pr-0">
+                                    <h5 class="text-light">Used:</h5>    
                                 </div>     
-                                <div class="col-9"> 
-                                    <p class="text-light" id="used-letters"> </p> 
+                                <div class="col-md-10 col-sm-9 pl-2"> 
+                                    <p class="text-light mb-0 mt-2" id="used-letters"> </p> 
                                 </div> 
                                 <br> <br>          
                             </div>  
                             <br>     
-                            <div class="row pr-1 pl-1 pb-2">  
+                            <div class="row pr-1 pl-1 pb-2">   
                                 <div class="col-9 pl-1">  
                                     <h5 class="text-light">Guesses Remaining</h5> 
                                 </div> 
                                 <div class="col-3 border">
                                     <p class="text-white h5 text-center w-100 pr-5" id="guesses-remaining">  </p>
                                 </div>
-                            </div> 
+                            </div>  
                         </div>           
-                    </div>       
+                    </div>        
+ 
                     <div class="row">
                         <div class="col-sm-6 white-border ">     
                             <p class="text-light h6 mt-3">
                                 Would You like a hint ?  It will cost you a guess... 
-                            </p>
-                            <br> 
+                            </p> 
+                            <br>   
                                 <button type="button" class="btn btn-sm btn-outline-light">HINT</button>
                             <br> <br>
-                            <textarea class="border w-100 bg-dark text-light mb-3" id="hint">
- 
-                            </textarea>
+                            <p class="border w-100 bg-dark text-light mb-3" id="hint">
+                            </p>  
                         </div>
                         <div class="col-sm-6 white-border "> 
-                            <br>   
-                            <div class="row m-4">
+                            <br>       
+                            <div class="row m-4"> 
                                 <div class="col-10 text-center"> 
                                     <h4 class="text-light">Wins</h4> 
                                 </div> 
