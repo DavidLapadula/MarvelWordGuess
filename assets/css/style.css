@@ -6,9 +6,13 @@ body {
 #marvel-header { 
     font-family: 'Marvel', sans-serif; 
     color: white; 
-    background-color: red; 
-    font-size: 7em;  
-}     
+    background-color: red;  
+}      
+
+.marvel-text {
+    font-family: 'Marvel', sans-serif; 
+    color: red;  
+}
   
 .red-border {
     border-color: red; 
@@ -33,5 +37,9 @@ body {
 }  
 
 #game-text {
+    display: none; 
+} 
+
+audio { /* used audio tag for cross broswer compatibility and then set display to non to hide controls */ 
     display: none; 
 } 

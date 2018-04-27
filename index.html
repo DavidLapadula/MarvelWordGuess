@@ -10,109 +10,106 @@
         <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>  <!-- External style sheet for minor styling adjustments-->
         <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">     <!-- Favicon-->
     </head>    
-    <body>   
+    <body>    
         <div class="container p-0">      
             <div class="row">   
                 <div class="col-12"> 
-                    <h1 id="marvel-header" class="font-weight-bold text-center p-0"> Marvel Trivia </h1> 
+                    <h1 id="marvel-header" class="font-weight-bold display-1 text-center p-0"> Marvel Trivia </h1> 
                 </div>
                 <div class="col-md-12 pr-0 mt-3 text-center">
                     <img class="img-fluid" id="background-image" src="assets/images/marvelBackground.png">     
-                </div>    
-            </div>           
+                </div>            
+            </div>              
             <div class="container" id="main-content"> 
                 <div class="col-12 red-border p-4">     
                     <div class="row mb-4">  
-                        <div i class="col-sm-6 text-light white-border">
+                        <div i class="col-md-6 text-light white-border">
                             <div id="game-interface">
                                 <div  class="col-md-12 col-sm-12 text-center pt-1">
                                     <img class="img-fluid game-image" id="tracker-image" src="assets/images/placeholder.jpg"> 
                                 </div>  
                                 <div class="col-md-12">
-                                    <p class="text-light h4 text-center mt-5" id="result"></p>
+                                    <p class="marvel-text h4 text-center mt-3" id="result"></p>
                                 </div> 
                                 <div class="col-md-12"> 
-                                    <p class="text-light h4 text-center mt-5" id="word-bubble"></p> 
+                                    <p class="text-light h4 text-center mt-3" id="word-bubble"></p> 
                                 </div>  
-                            </div>   
-                            <p id="starting-text" class="m-3 h6">   
-                                Want to test your Marvel lexicon? 
-                                <br>  <br> 
-                                The amount of guesses  is double the length of the word. 
-                                <br>  <br> 
-                                Free hint: each word is related to a character above...
-                                <br>  <br> 
-                                There are 9, so first to 5 wins!   
-                                <br> <br> 
-                                Press 'Enter' to get started, and then type your guesses! 
-                            </p>   
-                        </div>        
-                        <div class="col-sm-6 white-border">  
+                            </div>     
+                            <div id="starting-text" class="m-3">
+                                <h4 class="mb-3 marvel-text font-weight-bold">Want to test your Marvel lexicon? </h4> 
+                                <h5>Rules:</h5>
+                                <ol>
+                                    <li> The amount of guesses is double the length of the word.  </li>
+                                    <li> If you get the word before your guesses run out, you get a win </li>
+                                    <li> If you run out of guesses, you get a loss </li>
+                                    <li> First to 5 wins the game ! </li>
+                                </ol>  
+                                <p> Free hint: each word is related to a character above...  </p> 
+                                <p class="marvel-text h5"> Press 'Enter' to get started, and then type your guesses! </p> 
+                            </div>
+                        </div>          
+                        <div class="col-md-6 white-border">  
                             <div class="row border-bottom p-1"> 
-                                <div class="col-12 text-center mt-2">
-                                    <h5 class="text-light">Current Word</h5>    
-                                </div> 
-                                <br>
+                                <div class="col-12 text-center mt-2 mb-2">
+                                    <h4 class="marvel-text">Current Word</h4>    
+                                </div>   
+                                <br> <br> 
                                 <div class="col-12 text-center">
-                                    <p class="text-light h-100 mb-0 h5" id="word-at-play"> </p> 
-                                </div>  
-                                <br>  
-                            </div> 
-                            <div class="row border-bottom">
-                                <br> <br>   
-                                <div class="col-md-2 col-sm-3 mt-2 pr-0">
-                                    <h5 class="text-light">Used:</h5>    
-                                </div>     
-                                <div class="col-md-10 col-sm-9 pl-2"> 
-                                    <p class="text-light mb-0 mt-2" id="used-letters"> </p> 
+                                    <p class="text-light h-100 h5" id="word-at-play"> </p> 
                                 </div>    
-                                <br> <br>          
-                            </div>  
-                            <br>     
-                            <div class="row pr-1 pl-1 pb-2">   
-                                <div class="col-9 pl-1">  
-                                    <h5 class="text-light">Guesses Remaining</h5> 
+                            </div> 
+                            <div class="row p-3 border-bottom">    
+                                <div class="col-8 ml-2">  
+                                    <h5 class="text-light">Guesses Remaining:</h5> 
                                 </div> 
-                                <div class="col-3 border">
-                                    <p class="text-white h5 text-center w-100 pr-5" id="guesses-remaining">  </p>
+                                <div class="col-2 border">
+                                    <p class="text-white h5 text-center w-100" id="guesses-remaining">  </p> 
                                 </div>
                             </div>  
-                        </div>           
+                            <div class="row">  
+                                <div class="col-md-2 col-sm-12 mt-2 pr-0 justify-content-center">
+                                    <h5 class="text-light ml-3">Used:</h5>    
+                                </div>       
+                                <div class="col-md-10 col-sm-12"> 
+                                    <p class="text-light m-1 p-2 h6" id="used-letters"> </p> 
+                                </div>     
+                            </div>   
+                        </div>            
                     </div>        
-   
-                    <div class="row">
-                        <div class="col-sm-6 white-border ">     
+                    <div class="row">  
+                        <div class="col-md-6 white-border ">      
                             <p class="text-light h6 mt-3">
-                                Would You like a hint ?  It will cost you a guess... 
-                            </p>  
+                                Would You like a hint ?  It will cost you a guess...  
+                            </p>   
                             <br>   
                                 <button type="button" class="btn btn-sm btn-outline-light" onclick="hintGenerator()">HINT</button>
                             <br> <br>
-                            <p class="w-100 bg-dark text-light mb-3 h3 readonly text-center" id="hint">?</p>       
+                            <p class="w-100 bg-dark text-light mb-3 h4 readonly text-center" id="hint">?</p>       
                         </div>
-                        <div class="col-sm-6 white-border ">  
+                        <div class="col-md-6 white-border ">     
                             <br>          
-                            <div class="row m-4"> 
+                            <div class="row m-4">            
                                 <div class="col-10 text-center">  
-                                    <h4 class="text-light"> Wins</h4>  
+                                    <h2 class="marvel-text"> Wins</h2>   
                                 </div> 
                                 <div class="col-2 border p-0">
                                        <p class="text-white h4 text-center w-100 p-0" id="wins"> </p>
-                                </div>
-                            </div> 
+                                </div> 
+                            </div>    
                             <div class="row m-4"> 
                                 <div class="col-10 text-center">
-                                        <h4 class="text-light">Losses</h4> 
+                                    <h2 class="marvel-text">Losses</h2>  
                                 </div> 
                                 <div class="col-2 border p-0">
                                      <p class="text-white h4 text-center w-100 p-0" id="losses">  </p> 
                                 </div>
-                            </div> 
-                        </div>   
-                        <input type="button" value="Play again?" onClick="window.location.href=window.location.href"  class="col-md-6 btn btn-secondary btn-lg mt-2 offset-md-3 text-light">   
-                    </div> 
-                </div>
-            </div>  
+                            </div>    
+                        </div>     
+                        <input type="button" value="Play again?" onClick="window.location.href=window.location.href"  class="col-md-6 btn btn-secondary btn-lg mt-2 offset-md-3 text-light">
+                        <audio id="theme-song" controls autoplay src=""> </audio>         
+                    </div>    
+                </div> 
+            </div>     
         </div>      
         <script src="assets/javascript/game.js"></script> <!--Link to external javascript file -->      
     </body> 
