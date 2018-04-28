@@ -11,6 +11,7 @@ var wordbubble = document.getElementById("word-bubble");
 var gameInterface = document.getElementById("game-interface"); 
 var startingText = document.getElementById("starting-text");
 var themeSong = document.getElementById("theme-song");
+var gameSwitch = true; 
 var letterArray = [];   
 var usedArray = [];   
 var randomWordsUsed = [];   
@@ -33,9 +34,10 @@ function clearGameOver () {
     guessesRemaining.innerHTML = '';    
     winsCounter.innerHTML = ''; 
     lossCounter.innerHTML = '';  
+    gameSwitch = false; 
 }
    
-    document.onkeyup = function (event) {
+    document.onkeyup = function (event) {    
          
         if (event.keyCode === 13) {    
             
@@ -81,7 +83,7 @@ function clearGameOver () {
                 else {
                     return;   
                 }
-     
+       
             }         
     
             winsCounter.innerHTML = '0';   
@@ -91,7 +93,7 @@ function clearGameOver () {
             wordGenerator ();    
 
             document.onkeyup = function (event) { 
-                    if (event.keyCode >= 65 && event.keyCode <= 90) { 
+                    if (event.keyCode >= 65 && event.keyCode <= 90 && gameSwitch === true) { 
                         trackerImage.src = "assets/images/placeholder.jpg";  
                         wordbubble.innerHTML = "";    
                         themeSong.src = '';       
@@ -145,6 +147,7 @@ function clearGameOver () {
                         wordbubble.innerHTML = "That's 5! You win! Marvel wiz!";
                         themeSong.src = "assets/audio/avengers.mp3";  
                         clearGameOver ();
+                        console.log(gameSwitch); 
        
                     } else if (lossCounter.innerHTML >= 5) { 
                         trackerImage.src = "assets/images/you-lose.jpg";
