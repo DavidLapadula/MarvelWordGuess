@@ -15,7 +15,7 @@ var gameSwitch = null;
 
 
 //array with objects that hold messages, guesses, songs, and hints for the game
-        words: [ 
+var words = [ 
  
     {message: "as in Ironman's lady !", word: "PEPPER", hint:"Stark's Successor", picture:"assets/images/pPotts.png", song:"assets/audio/pepper.mp3"}, 
     {message: "the Hulk of the 80's !", word: "FERRIGNO", hint:"Beast or Bodybuilder?", picture:"assets/images/ferrigno.jpg", song:"assets/audio/hulkroar.mp3"}, 
@@ -26,11 +26,11 @@ var gameSwitch = null;
     {message: "as in Tobey Maguire, from Spiderman !", word: "MAGUIRE", hint:"Aracnid of the early 2000's", picture:"assets/images/maguire.jpg", song:"assets/audio/spiderman_homecoming.mp3"}, 
     {message: "one of the Fantastic 4 !", word: "THING", hint:"Superhero name, or noun property", picture:"assets/images/thing.jpg", song:"assets/audio/generic_win.mp3"}, 
     {message: "as in Blazing Skull !", word: "BLAZING", hint:"Something on fire is also ...", picture:"assets/images/blazing.jpg", song:"assets/audio/generic_win.mp3"},      
+  
 
-
-        ]
-
-
+]
+   
+console.log(words);  
 // function called on 'hint' button, and generates a message based on the state of the game
 function hintGenerator () { 
     switch (true) {
@@ -63,6 +63,7 @@ function wordGenerator () {
     letterArray = []; // function resets the letters used element and the current word element to ensure for a clear screen every time function is called
     usedArray = [];   
     usedLetters.innerHTML = '';   
+    console.log(words); 
     
     randomObject = words[Math.floor(Math.random() * words.length)]; // generates random word and store properties
     randomWord = randomObject.word;
@@ -84,7 +85,7 @@ function wordGenerator () {
         }   
     return createUnderline(); 
 }      
-
+  
 // function called when user presses 'Enter'. Sets starting values and sets boolean 'game switch' to true
 function gameInitialize () {
     winsCounter.innerHTML = '0';   
@@ -148,7 +149,7 @@ function stateChange () {
 document.onkeyup = function (event) {    
     if (event.keyCode === 13) { // game wont start until user presses 'Enter'
         gameInitialize ();               
-        wordGenerator ();        
+        wordGenerator ();            
               
             document.onkeyup = function (event) { 
                 if (event.keyCode >= 65 && event.keyCode <= 90 && gameSwitch === true) {  // Guesses can only be letters
@@ -171,7 +172,7 @@ document.onkeyup = function (event) {
                             wordbubble.innerHTML = 'Wrong!'; 
                             guessesRemaining.innerHTML--;   
                             usedArray.push(letterGuessed);  
-                            wrongLetters = usedArray.join(' , ');  
+                            wrongLetters = usedArray.join(' , ');   
                             usedLetters.innerHTML = wrongLetters;   
                         }    
                     
