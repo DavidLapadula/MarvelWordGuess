@@ -8,11 +8,11 @@ body {
     color: white; 
     background-color: red;  
 }      
-
+  
 .marvel-text {
     font-family: 'Marvel', sans-serif; 
     color: red;  
-}
+} 
   
 .red-border {
     border-color: red; 
@@ -40,6 +40,3 @@ body {
     display: none; 
 } 
 
-audio { /* used audio tag for cross broswer compatibility and then set display to non to hide controls */ 
-    display: none; 
-} 
