@@ -12,9 +12,10 @@ var gameInterface = document.getElementById('game-interface');
 var startingText = document.getElementById('starting-text');
 var themeSong = document.getElementById('theme-song');
 var gameSwitch = null; 
- 
+
+
 //array with objects that hold messages, guesses, songs, and hints for the game
-var words = [ 
+        words: [ 
  
     {message: "as in Ironman's lady !", word: "PEPPER", hint:"Stark's Successor", picture:"assets/images/pPotts.png", song:"assets/audio/pepper.mp3"}, 
     {message: "the Hulk of the 80's !", word: "FERRIGNO", hint:"Beast or Bodybuilder?", picture:"assets/images/ferrigno.jpg", song:"assets/audio/hulkroar.mp3"}, 
@@ -26,7 +27,9 @@ var words = [
     {message: "one of the Fantastic 4 !", word: "THING", hint:"Superhero name, or noun property", picture:"assets/images/thing.jpg", song:"assets/audio/generic_win.mp3"}, 
     {message: "as in Blazing Skull !", word: "BLAZING", hint:"Something on fire is also ...", picture:"assets/images/blazing.jpg", song:"assets/audio/generic_win.mp3"},      
 
-]                 
+
+        ]
+
 
 // function called on 'hint' button, and generates a message based on the state of the game
 function hintGenerator () { 
