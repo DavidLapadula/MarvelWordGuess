@@ -1,6 +1,11 @@
 body {
-    background-color: black; 
+    background-image: url("../images/marvel-background.jpg"); 
     margin-bottom: 10em; 
+}  
+  
+#main-content {
+    margin-top: 1em; 
+    background-color: black; 
 }  
 
 #marvel-header { 
@@ -12,7 +17,7 @@ body {
 .marvel-text {
     font-family: 'Marvel', sans-serif; 
     color: red;  
-} 
+}  
   
 .red-border {
     border-color: red; 
