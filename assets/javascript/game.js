@@ -6,22 +6,22 @@ var guessesRemaining = document.getElementById('guesses-remaining');
 var hint = document.getElementById('hint');   
 var trackerImage = document.getElementById('tracker-image'); 
 var currentWord = document.getElementById('word-at-play'); 
-var winMessage = document.getElementById('win-message'); 
+var winMessage = document.getElementById('win-message');  
 var wordbubble = document.getElementById('word-bubble'); 
 var gameInterface = document.getElementById('game-interface'); 
 var startingText = document.getElementById('starting-text');
 var themeSong = document.getElementById('theme-song');
 var gameSwitch = null; 
    
-    // Game code organized as object
+    // Game code organized as object 
     var fullGame = {    
         
         //An array of objects, each with associated values used for the game. This also allows for words to be added if desired
         words : [   
-        
+         
             {message: "Ironman's girlfriend !", word: "PEPPER", hint:"Stark's Successor", picture:"assets/images/pPotts.png", song:"assets/audio/pepper.mp3"}, 
             {message: "the Hulk of the 80's !", word: "FERRIGNO", hint:"Beast or Bodybuilder?", picture:"assets/images/ferrigno.jpg", song:"assets/audio/hulkroar.mp3"}, 
-            {message: "from X-men !", word: "CYCLOPS", hint:"You get ONE guess", picture:"assets/images/cyclops.png", song:"assets/audio/cyclops.mp3"}, 
+            {message: "from X-men !", word: "CYCLOPS", hint:"You get ONE guess", picture:"assets/images/cyclops.jpg", song:"assets/audio/cyclops.mp3"}, 
             {message: "Wolverine's skeletal material !", word: "ADAMANTIUM", hint:"Not steel, but ..", picture:"assets/images/wolverine.jpg", song:"assets/audio/wolverine.mp3"}, 
             {message: "Captain America's nemesis !", word: "HYDRA", hint:"The first avenger's first enemy", picture:"assets/images/hydra.jpg", song:"assets/audio/hydra.mp3"}, 
             {message: "as in Frank Castle, The Punisher !", word: "CASTLE", hint:"Last name of the last guy you would fight", picture:"assets/images/castlePunisher.jpg", song:"assets/audio/generic_win.mp3"}, 
@@ -118,7 +118,7 @@ var gameSwitch = null;
                             this.clearGameOver ();     
                             trackerImage.src = 'assets/images/you-lose.jpg';
                             winMessage.innerHTML = 'Nice Try!';     
-                            wordbubble.innerHTML = 'Press Play again for a do-over'; 
+                            wordbubble.innerHTML = 'Press Play again for a rematch !'; 
                             themeSong.src = 'assets/audio/lose_laugh.mp3'; 
                                 break;         
                     }
@@ -144,7 +144,7 @@ var gameSwitch = null;
                 }    
             
         },    
-             
+               
         // handles the letters inputted by the user
         guessChecker: function () {
             var letterGuessed = event.key.toUpperCase();   // control for letter casing. Words stored are all upper case
@@ -169,7 +169,7 @@ var gameSwitch = null;
             }   
         
         }     
-    }   
+    }     
        
     document.addEventListener('keyup', function (event){
         if (event.keyCode === 13) { // game wont start until user presses 'Enter'
@@ -180,7 +180,7 @@ var gameSwitch = null;
                 fullGame.newWordStart ();    
                 fullGame.guessChecker ();   
                 fullGame.stateChange (); 
-                }     
+                }      
  
             }    
         }       
