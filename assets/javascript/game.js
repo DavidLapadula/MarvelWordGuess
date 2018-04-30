@@ -25,7 +25,7 @@ var gameSwitch = true;
             {message: "Wolverine's skeletal material !", word: "ADAMANTIUM", hint:"Not steel, but ..", picture:"assets/images/wolverine.jpg", song:"assets/audio/wolverine.mp3"}, 
             {message: "Captain America's nemesis !", word: "HYDRA", hint:"The first avenger's first enemy", picture:"assets/images/hydra.jpg", song:"assets/audio/hydra.mp3"}, 
             {message: "as in Frank Castle, The Punisher !", word: "CASTLE", hint:"Last name of the last guy you would fight", picture:"assets/images/castlePunisher.jpg", song:"assets/audio/generic_win.mp3"}, 
-            {message: "as in Tobey Maguire, from Spiderman !", word: "MAGUIRE", hint:"Aracnid of the early 2000's", picture:"assets/images/maguire.jpg", song:"assets/audio/spiderman_homecoming.mp3"}, 
+            {message: "as in Tobey Maguire, from Spiderman !", word: "MAGUIRE", hint:"Arachnid of the early 2000's", picture:"assets/images/maguire.jpg", song:"assets/audio/spiderman_homecoming.mp3"}, 
             {message: "one of the Fantastic 4 !", word: "THING", hint:"Superhero name, or noun property", picture:"assets/images/thing.jpg", song:"assets/audio/generic_win.mp3"}, 
             {message: "as in Blazing Skull !", word: "BLAZING", hint:"Something on fire is also ...", picture:"assets/images/blazing.jpg", song:"assets/audio/generic_win.mp3"},      
         
