@@ -7,14 +7,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Marvel" rel="stylesheet"> <!-- Google font used to acquire actual Marvel font style -->  
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> <!-- Bootstrap used for responsive design-->
+        <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/> Reset style sheet requested by instructions -->
         <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>  <!-- External style sheet for custom aesthetic adjustments-->
         <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">     <!-- Favicon-->
     </head>      
     <body>          
-        <div class="container p-0" id="main-content">       
+        <div class="container p-0" id="main-content">        
             <div class="row">    
                 <div class="col-12">   
-                    <h1 id="marvel-header" class="font-weight-bold display-1 text-center p-0"> Marvel Trivia </h1> 
+                    <h1 id="marvel-header" class="font-weight-bold display-2 text-center p-0">Marvel Trivia</h1>    
                 </div>
                 <div class="col-12 mt-3 text-center">
                     <img class="img-fluid" id="background-image" src="assets/images/marvel-banner.png">     
@@ -22,29 +23,31 @@
             </div>                  
             <div class="container pb-3">  
                 <div class="col-12 red-border p-4">       
-                    <div class="row mb-4">   
+                    <div class="row mb-2">   
                         <div class="col-md-6 text-light white-border">     
                             <div id="game-interface">
-                                <div  class="col-12 text-center pt-1">
-                                    <img class="img-fluid game-image" id="tracker-image" src="assets/images/placeholder.jpg"> 
-                                </div>   
-                                <div class="col-12">
-                                    <p class="marvel-text h4 text-center mt-3" id="win-message"></p>
-                                </div>   
-                                <div class="col-12"> 
-                                    <p class="text-light h4 text-center mt-3" id="word-bubble"></p> 
+                                <div class="row">
+                                    <div  class="col-md-4 text-center pt-1"> 
+                                        <img class="img-fluid" id="tracker-image" src="assets/images/placeholder.jpg"> 
+                                    </div>   
+                                    <div class="col-md-8 pl-0 d-flex align-items-center justify-content-center">
+                                        <p class="marvel-text h5" id="win-message"></p>
+                                    </div> 
+                                </div>  <!-- Using Id selectors, the display value of these div's is switched when the game starts to show the image, but hide the rules that appear when the page loads-->
+                                <div class="col-12 mt-4"> 
+                                    <p class="text-light h5 text-center mt-3" id="word-bubble"></p> 
                                 </div>     
                             </div>     
-                            <div id="starting-text" class="m-3">
-                                <h4 class="mb-3 marvel-text font-weight-bold">Want to test your Marvel lexicon? </h4> 
+                            <div id="starting-text" class="m-1">
+                                <h5 class="mb-2 marvel-text font-weight-bold">Want to test your Marvel lexicon? </h5> 
                                 <h5>Rules:</h5> 
-                                <ol>    
-                                    <li> The amount of guesses is double the length of the word.  </li>
-                                    <li> If you get the word before your guesses run out, you get a win </li>
+                                <ol class="mb-2">      
+                                    <li> Guesses recieved is double the word length. </li>  
+                                    <li> For a win, guess the word without using all the guesses. </li>
                                     <li> If you run out of guesses, you get a loss </li>
-                                    <li> First to 5 wins the game ! </li>
+                                    <li> First to 5 wins the game ! </li> 
                                 </ol>  
-                                <p> Free hint: each word is related to a character above...  </p> 
+                                <p class="mb-2"> Free hint: each word is related to a character above...  </p> 
                                 <p class="marvel-text h5"> Press 'Enter' to get started, and then type your guesses! </p> 
                             </div>  
                         </div>          
@@ -52,60 +55,59 @@
                             <div class="row p-1"> 
                                 <div class="col-12 text-center mt-2 mb-2">
                                     <h4 class="marvel-text">Current Word</h4>     
-                                </div>   
-                                <br> <br>    
+                                </div>      
                                 <div class="col-12 text-center"> 
                                     <p class="text-light h5" id="word-at-play"></p> 
                                 </div>    
                             </div> 
-                            <div class="row p-3 border-bottom border-top">    
-                                <div class="col-10 pl-2">      
+                            <div class="row p-2 border-bottom border-top">    
+                                <div class="col-9">      
                                     <h5 class="text-light">Guesses Remaining:</h5> 
                                 </div> 
-                                <div class="col-2 border p-0">
+                                <div class="col-2 border p-1">
                                     <p class="text-white h5 text-center" id="guesses-remaining"></p> 
                                 </div>          
-                            </div>   
+                            </div>    
                             <div class="row p-2">   
                                 <div class="col-md-2 mt-2 pr-0 pl-0 text-center">
                                     <h5 class="text-light ml-0 pl-0">Used:</h5>     
-                                </div>       
+                                </div>        
                                 <div class="col-md-10 p-0"> 
                                     <p class="text-light m-1 p-2 h6" id="used-letters"></p> 
                                 </div>      
-                            </div>     
-                        </div>                    
+                            </div>       
+                        </div>                     
                     </div>                       
-                    <div class="row">   
+                    <div class="row">    
                         <div class="col-md-6 white-border ">      
                             <p class="text-light h6 mt-3 mb-4">
                                 Would You like a hint ?  It will cost you a guess...   
                             </p>   
                             <button type="button" class="btn btn-sm btn-outline-light mb-4" onclick="fullGame.hintGenerator()">HINT</button> <!-- Event listener for hintGenerator function-->
-                            <p class="w-100 bg-dark text-light mb-3 h4 readonly text-center" id="hint">?</p>        
+                            <p class="readonly w-100 bg-dark text-light mb-3 h5 text-center" id="hint">?</p>        
                         </div>  
                         <div class="col-md-6 white-border ">       
-                            <div class="row m-4">              
+                            <div class="row m-4">                 
                                 <div class="col-10 text-center">    
-                                    <h2 class="marvel-text"> Wins</h2>   
+                                    <h4 class="marvel-text"> Wins</h4>   
                                 </div> 
                                 <div class="col-2 border p-0">
-                                    <p class="text-white h4 text-center h-100 p-1 m-0" id="wins"></p>
+                                    <p class="text-white h5 text-center h-100 p-1 m-0" id="wins"></p>
                                 </div>    
                             </div>        
                             <div class="row m-4"> 
                                 <div class="col-10 text-center">  
-                                    <h2 class="marvel-text">Losses</h2>  
+                                    <h4 class="marvel-text">Losses</h4>  
                                 </div> 
                                 <div class="col-2 border p-0">
-                                     <p class="text-white h4 text-center h-100 p-1 m-0" id="losses"></p> 
+                                     <p class="text-white h5 text-center h-100 p-1 m-0" id="losses"></p> 
                                 </div>
                             </div>    
                         </div>     
-                        <input type="button" value="Play again?" onClick="window.location.href=window.location.href"  class="col-md-6 btn btn-secondary btn-lg mt-2 offset-md-3 text-light"> <!-- Play again button reloads page-->
-                        <audio id="theme-song" autoplay src=""></audio>         
+                        <audio id="theme-song" autoplay src=""></audio>   <!-- Hidden Audio Tag to play music based on result of game-->
                     </div>    
                 </div>  
+                <input type="button" value="Play again?" onClick="window.location.href=window.location.href"  class="col-md-6 offset-md-3 btn btn-secondary btn-md mt-2 text-light"> <!-- Play again button reloads page-->  
             </div>       
         </div>      
         <script src="assets/javascript/game.js"></script> <!--Link to external javascript file -->      

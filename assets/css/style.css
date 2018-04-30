@@ -8,6 +8,11 @@ body {
     background-color: black; 
 }  
 
+#background-image {
+    height: 6em; 
+    width: 40em; 
+}
+
 #marvel-header { 
     font-family: 'Marvel', sans-serif; 
     color: white; 
@@ -29,15 +34,12 @@ body {
     border: 0.25em dashed white; 
 }  
 
-#background-image {
-    height: 10em; 
-}
- 
-.game-image {
-    width: 8em;  
+#tracker-image {
+    height: 7em;
+    width: 7em; 
 }
 
-#game-interface {
+#game-interface { /* These are the Id's used to maniupulate which div is shown in the top left corner of the game interface screen*/
     display: none; 
 }  
 

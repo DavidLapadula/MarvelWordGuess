@@ -1,4 +1,4 @@
-//set global functions to dynamically change HTML
+//set global methods to dynamically change HTML and store in variables with name matching Id of element returned. 
 var winsCounter = document.getElementById('wins');   
 var lossCounter = document.getElementById('losses');
 var usedLetters = document.getElementById('used-letters');  
@@ -16,7 +16,7 @@ var gameSwitch = null;
     // Game code organized as object
     var fullGame = {    
         
-        //An array of objects, each with associated values used for the game
+        //An array of objects, each with associated values used for the game. This also allows for words to be added if desired
         words : [   
         
             {message: "Ironman's girlfriend !", word: "PEPPER", hint:"Stark's Successor", picture:"assets/images/pPotts.png", song:"assets/audio/pepper.mp3"}, 
@@ -31,7 +31,7 @@ var gameSwitch = null;
         
 
         ], 
-
+ 
         // function called on 'hint' button event lisetener. Generates a hint specific to the state of the game
         hintGenerator: function () { 
             switch (true) {
@@ -59,30 +59,29 @@ var gameSwitch = null;
             gameSwitch = false; 
         },  
 
-        // generates a random object from words array, stores properties in variables and then removes that item from array to prevent double use of a word
+        // generates a random object from words array, stores properties in variables and then removes that item from the array to prevent double use of a word in one game
         wordGenerator: function () { 
             letterArray = []; // resets the letters used element and the current word element to ensure for a clear screen every time the function is called
             usedArray = [];   
             usedLetters.innerHTML = '';   
             
-            randomObject = this.words[Math.floor(Math.random() * this.words.length)]; // generates random word from th word array and stores properties 
+            randomObject = this.words[Math.floor(Math.random() * this.words.length)]; // generates random word from the word array and stores properties 
             randomWord = randomObject.word;
             randomMessage = randomObject.message;   
             randomHint = randomObject.hint; 
             randomImage = randomObject.picture;  
             randomSong = randomObject.song;     
-            console.log(randomWord);  
-            function createUnderline () {    // nested function that makes underline for current word and then removes it from the array. Get's returned and executed when the word generator function is called
-                for (var i = 0; i < randomWord.length; i++) {
-                    letterArray[i] = ' __ ';    
-                }     
-                currentWordString = letterArray.join(' ');  
-                currentWord.innerHTML = currentWordString; 
-                guessesRemaining.innerHTML = randomWord.length * 2;   
-                var generatedWord = fullGame.words.indexOf(randomObject); 
-                fullGame.words.splice(generatedWord, 1);  
- 
-                }   
+                function createUnderline () {    // nested function that makes underline for current word and then removes it from the array. It get's returned and executed when the word generator function is called
+                    for (var i = 0; i < randomWord.length; i++) {
+                        letterArray[i] = ' __ ';    
+                    }      
+                    currentWordPlaceholder = letterArray.join(' ');   
+                    currentWord.innerHTML = currentWordPlaceholder; 
+                    guessesRemaining.innerHTML = randomWord.length * 2;   
+                    var generatedWord = fullGame.words.indexOf(randomObject); 
+                    fullGame.words.splice(generatedWord, 1);  
+    
+                    }   
             return createUnderline(); 
         },        
          
@@ -93,7 +92,7 @@ var gameSwitch = null;
             gameInterface.id = '';   // changes the Id of top left div. Starting text is hidden and the image/message div is displayed      
             startingText.id = 'game-text';   
             gameSwitch = true;  
-        },   
+        },     
 
         // clears the screen on the first guess of every new word. 
         newWordStart: function () {
@@ -110,6 +109,7 @@ var gameSwitch = null;
                     switch (true) {
                         case (lossCounter.innerHTML <= 4):
                             hint.innerHTML = '?';
+                            winMessage.innerHTML = 'Wrong !';
                             themeSong.src = 'assets/audio/wrong.mp3';   
                             wordbubble.innerHTML = 'Point for me';  
                             this.wordGenerator();  
@@ -120,7 +120,7 @@ var gameSwitch = null;
                             winMessage.innerHTML = 'Nice Try!';     
                             wordbubble.innerHTML = 'Press Play again for a do-over'; 
                             themeSong.src = 'assets/audio/lose_laugh.mp3'; 
-                                break;        
+                                break;         
                     }
             } else if (randomWord  === currentWord.innerHTML) { //gets word right
                 winsCounter.innerHTML++;   
@@ -144,7 +144,7 @@ var gameSwitch = null;
                 }    
             
         },    
-            
+             
         // handles the letters inputted by the user
         guessChecker: function () {
             var letterGuessed = event.key.toUpperCase();   // control for letter casing. Words stored are all upper case
@@ -169,19 +169,19 @@ var gameSwitch = null;
             }   
         
         }     
-    }
+    }   
        
-        document.addEventListener('keyup', function (event){
-            if (event.keyCode === 13) { // game wont start until user presses 'Enter'
-            fullGame.gameInitialize ();               
-            fullGame.wordGenerator();                      
-            document.onkeyup = function (event) { 
-                if (event.keyCode >= 65 && event.keyCode <= 90 && gameSwitch === true) {  // Guesses can only be letters
-                    fullGame.newWordStart ();    
-                    fullGame.guessChecker ();   
-                    fullGame.stateChange (); // test state of the game after each leter is guessed 
-                    }     
-
-                }    
-            }   
-        });  
+    document.addEventListener('keyup', function (event){
+        if (event.keyCode === 13) { // game wont start until user presses 'Enter'
+        fullGame.gameInitialize ();               
+        fullGame.wordGenerator();                      
+        document.onkeyup = function (event) { 
+            if (event.keyCode >= 65 && event.keyCode <= 90 && gameSwitch === true) {  // Guesses can only be letters, and 'gameSwitch' ensures user can only push letters when a game is being played
+                fullGame.newWordStart ();    
+                fullGame.guessChecker ();   
+                fullGame.stateChange (); 
+                }     
+ 
+            }    
+        }       
+    });   
