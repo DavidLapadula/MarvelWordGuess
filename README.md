@@ -15,3 +15,5 @@ Marvel themed hangman style word guessing game.
 * Use a hint if you need it, but it costs a guess
 * Get the word without running out of guesses and you get a point, otherwise computer gets a point
 * First to 5 wins
+
+[Play it here](https://davidlapadula.github.io/Word-Guess-Game/)
