@@ -167,9 +167,9 @@ var gameSwitch = true;
             winsCounter.innerHTML = ''; 
             lossCounter.innerHTML = '';  
             gameSwitch = false; 
-        },    
+        },      
  
-    }     
+    }      
 
     //Event listener to run game based on key events. Methods are called on 'fullGame' object to execute the game. 
     document.addEventListener('keyup', function (event) {
@@ -181,6 +181,7 @@ var gameSwitch = true;
                 fullGame.newWordStart ();    
                 fullGame.guessChecker ();    
                 fullGame.stateChange (); 
+                console.log("This block of code is working");  
                 }      
  
             }       
