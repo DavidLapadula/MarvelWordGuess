@@ -1,11 +1,12 @@
 ## Javascript Word Guess
-This is a Marvel themed word guessing game. It is inspired by the classic 'hangman' game, except with a Marvel theme and some code running under the hood. This is my first project implenting javascript logic for user interaction. 
+This is a Marvel themed word guessing game. It is inspired by the classic 'hangman' game and is my first project using javascript to create an interactive web application. 
 
 ## Motivation
-Desigining a game was an excellent way to practice fundamental javascript logical operators, especially in conjunction with a user interface. This provided an introduction to designing projects that work and provide food user experience. Furthermore, this project was also designed to store points and display previously chosen letters to the user, which required using a simple cache. 
+Desigining a game was an excellent way to practice fundamental javascript logical operators, especially in conjunction with a user interface. This provided an introduction to designing projects that work and provide good user experience. Furthermore, this project was also designed to store points and display previously chosen letters to the user, which required using a simple cache. 
  
 ## Screenshots
-Include logo/demo screenshot etc.
+
+![](./assets/images/marvelTrivia.gif)
 
 ## Tech/framework used
 
