@@ -11,7 +11,7 @@ Desigining a game was an excellent way to practice fundamental javascript logica
 ## Tech/framework used
 
 <b>Built with</b>
-- [HTML
+- HTML
 - CSS 
 - Javascript
 
