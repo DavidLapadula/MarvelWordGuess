@@ -27,6 +27,3 @@ When developing this game I realized that, when choooisng a random index from an
 * Use a hint if you need it, but it costs a guess
 * Get the word without running out of guesses and you get a point, otherwise computer gets a point
 * First to 5 wins
-
-### Live Look
-[Marvel Word Guess](https://davidlapadula.github.io/Word-Guess-Game/)
